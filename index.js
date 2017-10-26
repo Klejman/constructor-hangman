@@ -13,10 +13,10 @@ function guess(){
       message: 'Enter a letter:'
     }
   ]).then((user) => {
-    emojis.unicode(:octocat:);
+    // console.log(emojis.unicode(:octocat:));
     console.log('GAME ON!');
-    let letter = user.letter;
-    newWord.checkLetter(letter);
+    let Letter = user.Letter;
+    newWord.checkLetter(Letter);
     if (newWord.hasLetterBeenGuessed) {
       console.log('Now try a letter you haven\'t already guessed!');
       guess();
@@ -55,7 +55,7 @@ function playAgain(){
         guess();
       });
     } else {
-      console.log(emojis.unicode(:wave:));
+      // console.log(emojis.unicode(:wave:));
     }
       console.log('Ok, thanks for playing!');
     })
