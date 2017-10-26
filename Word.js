@@ -7,9 +7,10 @@ const Game = new BoobooButt();
 const Word = function(selectedForGamePlay){
   this.guessesRemaining = 10;
   this.selectedForGamePlay = selectedForGamePlay;
+  // loop through letters of selected word
   this.letters = [];
   this.guessesSoFar = [];
-console.log(this.selectedForGamePlay);
+  console.log(this.selectedForGamePlay);
   // for (let i = 0; i < this.selectedForGamePlay.length; i++) {
   //   this.letters.push(new Letter.Letter(this.selectedForGamePlay[i]));
   // }
@@ -17,9 +18,10 @@ console.log(this.selectedForGamePlay);
 
 const testWord = new Word(Game.roundWord);
 
-Word.prototype.selectedForGamePlay = function(letterEntered) {
-  this.incorrect = true;
-  this.hasLetterBeenGuessed = false;
+Word.prototype.checkGuess = function(letterEntered) {
+  // return true false
+  // this.incorrect = true;
+  // this.hasLetterBeenGuessed = false;
   letterEntered.toLowerCase();
 
   if (this.guessesSoFar.indexOf(letterEntered) !== -1) {
@@ -51,7 +53,7 @@ Word.prototype.isComplete = function() {
   return true;
 };
 
-Word.prototype.print = () => {
+Word.prototype.print = function() {
   let output = "";
 
   for(let i = 0; i < this.letters.length; i++){

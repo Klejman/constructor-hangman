@@ -18,4 +18,6 @@ Letter.prototype.printInfo = () => {
   }
 };
 
+// protype letter can take in an argument if letter is one of round word letter
+
 module.exports = Letter;
