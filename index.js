@@ -66,4 +66,4 @@ game.playerPrompt(function(){
   guess();
 });
 
-module.exports = {playerPrompt};
+module.exports = playerPrompt;

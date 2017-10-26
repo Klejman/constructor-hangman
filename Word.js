@@ -55,4 +55,4 @@ Word.prototype.print = () => {
   return output;
 };
 
-module.exports = {Word};
+module.exports = Word;

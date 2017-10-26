@@ -18,4 +18,4 @@ Letter.prototype.printInfo = () => {
   }
 };
 
-module.exports = {Letter};
+module.exports = Letter;

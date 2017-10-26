@@ -1,3 +1,5 @@
+
+
 let authorQuotes = [{
   author: "Dr. Seuss",
   quote: "Don't cry because it's over, smile because it happened."
@@ -53,3 +55,6 @@ let gameSetup = ()=> {
   console.log(authorQuotes[number].author); // hangman word
 };
 
+module.exports = authorQuotes;
+
+gameSetup(authorQuotes);
