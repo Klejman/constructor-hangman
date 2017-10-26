@@ -17,7 +17,7 @@ console.log(this.selectedForGamePlay);
 
 const testWord = new Word(Game.roundWord);
 
-Word.prototype.selectedForGamePlay = function (letterEntered) {
+Word.prototype.selectedForGamePlay = function(letterEntered) {
   this.incorrect = true;
   this.hasLetterBeenGuessed = false;
   letterEntered.toLowerCase();
