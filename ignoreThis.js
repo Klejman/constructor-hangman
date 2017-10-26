@@ -1,3 +1,6 @@
+//command a + command + opt + l => clean up
+
+
 function AnimalMaker(name) {
   return {
     speak: function() {

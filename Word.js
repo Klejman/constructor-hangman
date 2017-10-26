@@ -1,32 +1,37 @@
 //require Letter.js HERE
 const Letter = require('./Letter.js');
+const BoobooButt = require('./AuthorQuotes.js');
 
+const Game = new BoobooButt();
 
-let Word = (selectedForGamePlay) => {
-  this.guessesRemaining = 7;
+const Word = function(selectedForGamePlay){
+  this.guessesRemaining = 10;
   this.selectedForGamePlay = selectedForGamePlay;
   this.letters = [];
   this.guessesSoFar = [];
-
-  for (let i = 0; i < this.selectedForGamePlay.length; i++) {
-    this.letters.push(new Letter.Letter(this.selectedForGamePlay[i]));
-  }
+console.log(this.selectedForGamePlay);
+  // for (let i = 0; i < this.selectedForGamePlay.length; i++) {
+  //   this.letters.push(new Letter.Letter(this.selectedForGamePlay[i]));
+  // }
 };
 
-Word.prototype.checkLetter = (letter) => {
+const testWord = new Word(Game.roundWord);
+
+Word.prototype.selectedForGamePlay = function (letterEntered) {
   this.incorrect = true;
   this.hasLetterBeenGuessed = false;
-  let letter = letter.toLowerCase();
+  letterEntered.toLowerCase();
 
-  if (this.guessesSoFar.indexOf(letter) !== -1) {
+  if (this.guessesSoFar.indexOf(letterEntered) !== -1) {
+    //saved the value of 'this' in a local variable, to make it explicitly part of the lexical context for the function and for all nested function scopes.
     this.hasLetterBeenGuessed = true;
   } else {
-    this.guessesSoFar.push(letter);
+    this.guessesSoFar.push(letterEntered);
     for(let i = 0; i < this.letters.length; i++){
 
-      if(this.letters[i].letter.toLowerCase() === letter){
+      if(this.letterEntered[i].letterEntered.toLowerCase() === letterEntered){
         this.incorrect = false;
-        this.letters[i].show = true;
+        this.letterEntered[i].show = true;
       }
     }
 
@@ -36,7 +41,7 @@ Word.prototype.checkLetter = (letter) => {
   }
 };
 
-Word.prototype.isComplete = () => {
+Word.prototype.isComplete = function() {
   for(let i = 0; i < this.letters.length; i++){
     //return Boolean values
     if(!this.letters[i].show){
@@ -55,4 +60,6 @@ Word.prototype.print = () => {
   return output;
 };
 
+// testWord();
+// Game.play();
 module.exports = Word;

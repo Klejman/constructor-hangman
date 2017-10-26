@@ -1,5 +1,3 @@
-
-
 let authorQuotes = [{
   author: "Dr. Seuss",
   quote: "Don't cry because it's over, smile because it happened."
@@ -14,7 +12,7 @@ let authorQuotes = [{
   quote: "It is better to be hated for what you are than to be loved for what you are not."
 }, {
   author: "Albert Einstein",
-  quote:"There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle."
+  quote: "There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle."
 }, {
   author: "Dr. Seuss",
   quote: "I like nonsense, it wakes up the brain cells. Fantasy is a necessary ingredient in living."
@@ -41,20 +39,20 @@ let authorQuotes = [{
   quote: "Immaturity is the incapacity to use one's intelligence without the guidance of another."
 }];
 // random selection stored in GetRandomInt variable
-let getRandomInt = (min, max) => {
+const getRandomInt = (min, max) => {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
 };
 
-let gameSetup = ()=> {
-  // GetRandomInt function invoked and assigned to number
-  let number = getRandomInt( 0, authorQuotes.length);
-  let hint = authorQuotes[number].quote;
-  console.log(hint); // hint displayed to user in terminal
-  console.log(authorQuotes[number].author); // hangman word
-};
+function gameSetup() {
+  this.number = getRandomInt(0, authorQuotes.length);
+  this.hint = authorQuotes[this.number].quote;
+  this.roundWord = authorQuotes[this.number].author;
+  //console.log(hint); // hint displayed to user in terminal
+  //console.log(authorQuotes[number].author); // hangman word
+}
 
-module.exports = authorQuotes;
+module.exports = gameSetup;
 
-gameSetup(authorQuotes);
+// gameSetup(authorQuotes);
